@@ -96,9 +96,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
             opacity: 0;
+            overflow: hidden;
         }
 
         .screen.active {
@@ -120,21 +121,21 @@
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 1.2rem 3.5rem;
+            padding: 1rem 3rem;
             border-radius: 100px;
             color: #ffffff;
             font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.4);
             display: inline-flex;
             align-items: center;
-            gap: 0.9rem;
-            margin-top: 1.5rem;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
         }
 
         .btn-cinematic:hover {
@@ -151,7 +152,7 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
-            padding: 1.8rem;
+            padding: 1.5rem;
             text-align: left;
             position: relative;
             transition: all 0.4s ease;
@@ -166,8 +167,8 @@
         /* Interactive Cake System */
         .cake-container {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 280px;
+            height: 280px;
             margin: 0 auto;
         }
 
@@ -224,16 +225,17 @@
             color: var(--gold);
         }
 
-        /* Cut Knife Graphic */
+        /* Realistic Cut Knife Graphic */
         #knife-element {
             position: absolute;
-            top: 10px;
-            right: -20px;
-            font-size: 50px;
-            transform: rotate(-45deg);
+            top: -20px;
+            right: 20px;
+            font-size: 55px;
+            transform: rotate(-30deg);
             opacity: 0;
             pointer-events: none;
-            transition: all 0.5s ease;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+            z-index: 30;
         }
     </style>
 </head>
@@ -257,21 +259,21 @@
         <i class="fas fa-volume-up text-lg" id="sound-icon"></i>
     </button>
 
-    <!-- SCREEN 0: STARTING GATEWAY -->
+    <!-- SCREEN 0: STARTING GATEWAY (SURPRISE TITLE) -->
     <div id="screen-start" class="screen active z-50 bg-black/90 backdrop-blur-xl">
         <div class="max-w-2xl px-4 flex flex-col items-center">
             <div class="inline-block p-4 rounded-full bg-yellow-500/10 border border-yellow-500/20 mb-6 animate-pulse">
-                <i class="fas fa-sparkles text-3xl text-yellow-400"></i>
+                <i class="fas fa-gift text-3xl text-yellow-400"></i>
             </div>
-            <h1 class="font-serif-title text-5xl md:text-7xl font-bold mb-4 tracking-tight glow-text-white">
-                Welcome to My Birthday Journey
+            <h1 class="font-serif-title text-4xl sm:text-6xl font-bold mb-4 tracking-tight glow-text-white">
+                A Magical Surprise Awaits
             </h1>
-            <p class="text-gray-400 text-lg md:text-xl font-light mb-8 tracking-widest uppercase">
-                <span class="text-yellow-400 font-semibold">Shrawan</span> • 6 August 1999
+            <p class="text-gray-400 text-base sm:text-lg font-light mb-8 tracking-widest uppercase">
+                Crafted For <span class="text-yellow-400 font-semibold">Shrawan</span> • 6 August
             </p>
             <button class="btn-cinematic" onclick="startMasterJourney()">
-                <span>Enter The Journey</span>
-                <i class="fas fa-play text-xs"></i>
+                <span>Unveil The Surprise</span>
+                <i class="fas fa-sparkles text-xs"></i>
             </button>
         </div>
     </div>
@@ -279,29 +281,29 @@
     <!-- SCREEN 1: OPENING PROLOGUE -->
     <div id="screen-prologue" class="screen">
         <div class="max-w-3xl">
-            <h2 id="typed-prologue" class="font-handwriting text-5xl md:text-7xl text-yellow-300 leading-relaxed glow-gold min-h-[160px]"></h2>
+            <h2 id="typed-prologue" class="font-handwriting text-4xl sm:text-6xl text-yellow-300 leading-relaxed glow-gold min-h-[140px]"></h2>
         </div>
     </div>
 
     <!-- SCREEN 2: MAIN BIRTHDAY HERO -->
     <div id="screen-hero" class="screen">
         <div class="max-w-4xl mx-auto flex flex-col items-center">
-            <div class="flex items-center gap-3 mb-4 bg-white/5 border border-white/10 px-6 py-2 rounded-full backdrop-blur-md">
-                <i class="fas fa-star text-yellow-400 text-sm"></i>
+            <div class="flex items-center gap-3 mb-3 bg-white/5 border border-white/10 px-6 py-1.5 rounded-full backdrop-blur-md">
+                <i class="fas fa-star text-yellow-400 text-xs"></i>
                 <span class="text-xs uppercase tracking-[0.3em] text-yellow-200">My Special Day</span>
-                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                <i class="fas fa-star text-yellow-400 text-xs"></i>
             </div>
 
-            <h1 class="font-serif-title text-6xl md:text-8xl font-black mb-2 tracking-tight text-white glow-text-white">
+            <h1 class="font-serif-title text-5xl sm:text-7xl font-black mb-1 tracking-tight text-white glow-text-white">
                 Happy Birthday
             </h1>
-            <h2 class="text-5xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 mb-2 tracking-wider">
+            <h2 class="text-4xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 mb-2 tracking-wider">
                 SHRAWAN
             </h2>
-            <p class="text-xl text-yellow-400/80 font-mono tracking-widest mb-6">6 AUGUST 1999</p>
+            <p class="text-lg text-yellow-400/80 font-mono tracking-widest mb-4">6 AUGUST</p>
 
-            <div class="h-24 max-w-2xl flex items-center justify-center">
-                <p id="typed-hero" class="text-lg md:text-2xl text-gray-300 italic font-light leading-relaxed"></p>
+            <div class="h-20 max-w-2xl flex items-center justify-center">
+                <p id="typed-hero" class="text-base sm:text-xl text-gray-300 italic font-light leading-relaxed"></p>
             </div>
 
             <button class="btn-cinematic" onclick="nextScreen('screen-timeline')">
@@ -314,38 +316,38 @@
     <!-- SCREEN 3: TIMELINE -->
     <div id="screen-timeline" class="screen">
         <div class="max-w-5xl w-full">
-            <span class="text-yellow-400 text-xs font-mono uppercase tracking-[0.4em] mb-2 block">The Life Journey</span>
-            <h2 class="font-serif-title text-4xl md:text-6xl font-bold mb-10">The Story of My Journey</h2>
+            <span class="text-yellow-400 text-xs font-mono uppercase tracking-[0.4em] mb-1 block">The Life Journey</span>
+            <h2 class="font-serif-title text-3xl sm:text-5xl font-bold mb-8">The Story of My Journey</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-5 w-full">
-                <div class="glass-card flex flex-col justify-between h-64 border-yellow-500/20">
-                    <span class="text-4xl font-black text-yellow-400 font-mono">1999</span>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+                <div class="glass-card flex flex-col justify-between h-56 border-yellow-500/20">
+                    <span class="text-2xl font-black text-yellow-400 font-mono uppercase">Day 1</span>
                     <div>
-                        <h4 class="text-xl font-bold mb-1">Born / Origin</h4>
+                        <h4 class="text-lg font-bold mb-1">Born / Origin</h4>
                         <p class="text-xs text-gray-400">The journey began on 6th August. A life full of curiosity and potential was born.</p>
                     </div>
                 </div>
 
-                <div class="glass-card flex flex-col justify-between h-64 border-blue-500/20">
-                    <span class="text-4xl font-black text-blue-400 font-mono">2015</span>
+                <div class="glass-card flex flex-col justify-between h-56 border-blue-500/20">
+                    <span class="text-3xl font-black text-blue-400 font-mono">2015</span>
                     <div>
-                        <h4 class="text-xl font-bold mb-1">Dreams Taking Shape</h4>
+                        <h4 class="text-lg font-bold mb-1">Dreams Taking Shape</h4>
                         <p class="text-xs text-gray-400">Schooling years, discovering technology, and crafting big aspirations.</p>
                     </div>
                 </div>
 
-                <div class="glass-card flex flex-col justify-between h-64 border-emerald-500/20">
-                    <span class="text-4xl font-black text-emerald-400 font-mono">2024</span>
+                <div class="glass-card flex flex-col justify-between h-56 border-emerald-500/20">
+                    <span class="text-3xl font-black text-emerald-400 font-mono">2024</span>
                     <div>
-                        <h4 class="text-xl font-bold mb-1">Engineering Success</h4>
+                        <h4 class="text-lg font-bold mb-1">Engineering Success</h4>
                         <p class="text-xs text-gray-400">Mastering cloud architecture, IT specialization, and overcoming challenges.</p>
                     </div>
                 </div>
 
-                <div class="glass-card flex flex-col justify-between h-64 border-purple-500/20">
-                    <span class="text-4xl font-black text-purple-400 font-mono">2026</span>
+                <div class="glass-card flex flex-col justify-between h-56 border-purple-500/20">
+                    <span class="text-3xl font-black text-purple-400 font-mono">2026</span>
                     <div>
-                        <h4 class="text-xl font-bold mb-1">Reaching New Heights</h4>
+                        <h4 class="text-lg font-bold mb-1">Reaching New Heights</h4>
                         <p class="text-xs text-gray-400">Unstoppable growth, global goals, and building an inspiring legacy ahead.</p>
                     </div>
                 </div>
@@ -361,41 +363,41 @@
     <!-- SCREEN 4: BENTO GRID -->
     <div id="screen-bento" class="screen">
         <div class="max-w-5xl w-full">
-            <span class="text-yellow-400 text-xs font-mono uppercase tracking-[0.4em] mb-2 block">Personal Milestones</span>
-            <h2 class="font-serif-title text-4xl md:text-6xl font-bold mb-8">Things I'm Proud Of</h2>
+            <span class="text-yellow-400 text-xs font-mono uppercase tracking-[0.4em] mb-1 block">Personal Milestones</span>
+            <h2 class="font-serif-title text-3xl sm:text-5xl font-bold mb-6">Things I'm Proud Of</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
-                <div class="glass-card md:col-span-2 flex items-center gap-5">
-                    <div class="p-4 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-3xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+                <div class="glass-card md:col-span-2 flex items-center gap-4">
+                    <div class="p-3.5 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-2xl">
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold mb-1">Senior IT Specialist</h3>
+                        <h3 class="text-xl font-bold mb-0.5">Senior IT Specialist</h3>
                         <p class="text-gray-400 text-xs">Architecting high-scale IT infrastructure, solving complex software challenges daily.</p>
                     </div>
                 </div>
 
                 <div class="glass-card flex flex-col justify-center">
-                    <i class="fas fa-cloud text-3xl text-cyan-400 mb-2"></i>
-                    <h3 class="text-lg font-bold mb-1">Cloud & Azure Journey</h3>
+                    <i class="fas fa-cloud text-2xl text-cyan-400 mb-2"></i>
+                    <h3 class="text-base font-bold mb-0.5">Cloud & Azure Journey</h3>
                     <p class="text-gray-400 text-xs">Building cloud-native ecosystems.</p>
                 </div>
 
                 <div class="glass-card flex flex-col justify-center">
-                    <i class="fas fa-heart text-3xl text-rose-500 mb-2"></i>
-                    <h3 class="text-lg font-bold mb-1">Kind Heart</h3>
+                    <i class="fas fa-heart text-2xl text-rose-500 mb-2"></i>
+                    <h3 class="text-base font-bold mb-0.5">Kind Heart</h3>
                     <p class="text-gray-400 text-xs">Staying humble, grounded, and helpful.</p>
                 </div>
 
                 <div class="glass-card flex flex-col justify-center">
-                    <i class="fas fa-fire text-3xl text-amber-400 mb-2"></i>
-                    <h3 class="text-lg font-bold mb-1">Never Give Up</h3>
+                    <i class="fas fa-fire text-2xl text-amber-400 mb-2"></i>
+                    <h3 class="text-base font-bold mb-0.5">Never Give Up</h3>
                     <p class="text-gray-400 text-xs">Transforming every challenge into triumph.</p>
                 </div>
 
                 <div class="glass-card flex flex-col justify-center">
-                    <i class="fas fa-globe text-3xl text-purple-400 mb-2"></i>
-                    <h3 class="text-lg font-bold mb-1">Bigger Dreams</h3>
+                    <i class="fas fa-globe text-2xl text-purple-400 mb-2"></i>
+                    <h3 class="text-base font-bold mb-0.5">Bigger Dreams</h3>
                     <p class="text-gray-400 text-xs">Targeting massive horizons ahead.</p>
                 </div>
             </div>
@@ -409,75 +411,84 @@
 
     <!-- SCREEN 5: HEARTFELT LETTER -->
     <div id="screen-letter" class="screen">
-        <div class="max-w-3xl w-full glass-card p-8 md:p-12 text-center border-yellow-500/20 relative">
-            <h2 class="font-handwriting text-4xl md:text-5xl text-yellow-300 mb-6">Dear Shrawan,</h2>
+        <div class="max-w-2xl w-full glass-card p-6 sm:p-10 text-center border-yellow-500/20 relative">
+            <h2 class="font-handwriting text-3xl sm:text-4xl text-yellow-300 mb-4">Dear Shrawan,</h2>
 
-            <div class="space-y-4 text-gray-200 text-base md:text-lg font-light leading-relaxed italic">
+            <div class="space-y-3 text-gray-200 text-sm sm:text-base font-light leading-relaxed italic">
                 <p>
                     Today you celebrate another milestone of life—not just getting older, but becoming stronger, wiser, and more focused.
                 </p>
                 <p>
                     Be proud of every obstacle you quietly overcame, every late night you worked hard, and every dream you held onto. You are building a life worth celebrating.
                 </p>
-                <p class="text-yellow-300 font-semibold text-xl not-italic pt-2">
+                <p class="text-yellow-300 font-semibold text-lg not-italic pt-1">
                     "I believe my greatest achievements are still waiting for me."
                 </p>
             </div>
 
-            <button class="btn-cinematic mt-8" onclick="nextScreen('screen-cake')">
+            <button class="btn-cinematic mt-6" onclick="nextScreen('screen-cake')">
                 <span>One Last Surprise</span>
                 <i class="fas fa-gift"></i>
             </button>
         </div>
     </div>
 
-    <!-- SCREEN 6: CAKE CUTTING -->
+    <!-- SCREEN 6: CAKE CUTTING (SPLITTING REALISTIC CAKE) -->
     <div id="screen-cake" class="screen">
         <div class="max-w-xl w-full flex flex-col items-center">
-            <h2 class="font-serif-title text-4xl md:text-5xl font-bold mb-2">Make A Wish</h2>
-            <p class="text-gray-400 text-sm uppercase tracking-widest mb-6">Celebration Ritual</p>
+            <h2 class="font-serif-title text-3xl sm:text-5xl font-bold mb-1">Make A Wish</h2>
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-4">Celebration Ritual</p>
 
-            <div class="cake-container mb-6" id="cake-box">
+            <div class="cake-container mb-4" id="cake-box">
+                <!-- Kitchen Knife -->
                 <i class="fas fa-utensils text-yellow-400" id="knife-element"></i>
 
-                <!-- SVG Cake -->
+                <!-- SVG Cake Split Into Two Halves -->
                 <svg id="cake-svg" viewBox="0 0 300 300" class="w-full h-full drop-shadow-[0_20px_50px_rgba(255,215,0,0.3)]">
                     <ellipse cx="150" cy="260" rx="120" ry="20" fill="rgba(255, 215, 0, 0.2)" />
                     <ellipse cx="150" cy="250" rx="110" ry="18" fill="#e2e8f0" />
                     <ellipse cx="150" cy="247" rx="100" ry="15" fill="#ffffff" />
 
-                    <!-- Bottom Cake Tier -->
-                    <g id="cake-tier-bottom">
-                        <path d="M 60,180 Q 150,210 240,180 L 240,240 Q 150,270 60,240 Z" fill="#3b0764"/>
-                        <path d="M 60,180 Q 150,210 240,180 L 240,195 Q 150,225 60,195 Z" fill="#581c87"/>
-                        <path d="M 60,180 Q 75,200 90,185 Q 105,205 120,183 Q 135,202 150,184 Q 165,204 180,185 Q 195,205 210,183 Q 225,202 240,180 L 240,185 Q 150,215 60,185 Z" fill="#ffd700"/>
-                    </g>
-
-                    <!-- Top Cake Tier -->
-                    <g id="cake-tier-top">
-                        <path d="M 85,120 Q 150,145 215,120 L 215,175 Q 150,200 85,175 Z" fill="#701a75"/>
-                        <path d="M 85,120 Q 150,145 215,120 L 215,132 Q 150,157 85,132 Z" fill="#a21caf"/>
+                    <!-- Left Cake Half -->
+                    <g id="cake-left">
+                        <!-- Bottom Tier Left -->
+                        <path d="M 60,180 Q 105,195 150,195 L 150,255 Q 105,255 60,240 Z" fill="#3b0764"/>
+                        <path d="M 60,180 Q 105,195 150,195 L 150,202 Q 105,202 60,195 Z" fill="#581c87"/>
+                        <path d="M 60,180 Q 75,200 90,185 Q 105,205 120,183 Q 135,202 150,184 L 150,195 Q 105,195 60,185 Z" fill="#ffd700"/>
+                        <!-- Top Tier Left -->
+                        <path d="M 85,120 Q 117.5,132.5 150,132.5 L 150,187.5 Q 117.5,187.5 85,175 Z" fill="#701a75"/>
+                        <path d="M 85,120 Q 117.5,132.5 150,132.5 L 150,140 Q 117.5,140 85,132 Z" fill="#a21caf"/>
                         <circle cx="100" cy="125" r="5" fill="#ffffff"/>
                         <circle cx="125" cy="131" r="5" fill="#ffd700"/>
-                        <circle cx="150" cy="133" r="5" fill="#ffffff"/>
-                        <circle cx="175" cy="131" r="5" fill="#ffd700"/>
-                        <circle cx="200" cy="125" r="5" fill="#ffffff"/>
+                        <!-- Left Candle -->
+                        <rect x="115" y="80" width="8" height="42" rx="3" fill="#fbbf24"/>
+                        <line x1="119" y1="80" x2="119" y2="73" stroke="#000" stroke-width="2"/>
                     </g>
 
-                    <!-- Candles -->
-                    <g id="candles">
-                        <rect x="115" y="80" width="8" height="42" rx="3" fill="#fbbf24"/>
-                        <rect x="146" y="70" width="8" height="50" rx="3" fill="#f43f5e"/>
+                    <!-- Right Cake Half -->
+                    <g id="cake-right">
+                        <!-- Bottom Tier Right -->
+                        <path d="M 150,195 Q 195,195 240,180 L 240,240 Q 195,255 150,255 Z" fill="#3b0764"/>
+                        <path d="M 150,195 Q 195,195 240,180 L 240,195 Q 195,202 150,202 Z" fill="#581c87"/>
+                        <path d="M 150,184 Q 165,204 180,185 Q 195,205 210,183 Q 225,202 240,180 L 240,185 Q 195,195 150,195 Z" fill="#ffd700"/>
+                        <!-- Top Tier Right -->
+                        <path d="M 150,132.5 Q 182.5,132.5 215,120 L 215,175 Q 182.5,187.5 150,187.5 Z" fill="#701a75"/>
+                        <path d="M 150,132.5 Q 182.5,132.5 215,120 L 215,132 Q 182.5,140 150,140 Z" fill="#a21caf"/>
+                        <circle cx="175" cy="131" r="5" fill="#ffd700"/>
+                        <circle cx="200" cy="125" r="5" fill="#ffffff"/>
+                        <!-- Right Candle -->
                         <rect x="177" y="80" width="8" height="42" rx="3" fill="#fbbf24"/>
-                        <line x1="119" y1="80" x2="119" y2="73" stroke="#000" stroke-width="2"/>
-                        <line x1="150" y1="70" x2="150" y2="63" stroke="#000" stroke-width="2"/>
                         <line x1="181" y1="80" x2="181" y2="73" stroke="#000" stroke-width="2"/>
                     </g>
+
+                    <!-- Center Candle -->
+                    <rect x="146" y="70" width="8" height="50" rx="3" fill="#f43f5e"/>
+                    <line x1="150" y1="70" x2="150" y2="63" stroke="#000" stroke-width="2"/>
                 </svg>
 
                 <!-- Candle Flames -->
                 <div class="candle-flame absolute top-[52px] left-[113px]"></div>
-                <div class="candle-flame absolute top-[42px] left-[144px] scale-125"></div>
+                <div class="candle-flame absolute top-[42px] left-[144px] scale-125" id="center-flame"></div>
                 <div class="candle-flame absolute top-[52px] left-[175px]"></div>
             </div>
 
@@ -489,25 +500,25 @@
 
     <!-- SCREEN 7: GRAND FINALE -->
     <div id="screen-finale" class="screen">
-        <div class="max-w-4xl mx-auto z-20">
-            <h1 class="font-serif-title text-6xl md:text-9xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 glow-gold">
+        <div class="max-w-3xl mx-auto z-20 flex flex-col items-center">
+            <h1 class="font-serif-title text-4xl sm:text-6xl md:text-7xl font-black mb-1 text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 glow-gold">
                 Happy Birthday
             </h1>
-            <h2 class="text-5xl md:text-8xl font-black text-white mb-4 tracking-wide glow-text-white">
-                SHRAWAN ❤️
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-black text-white mb-2 tracking-wide glow-text-white flex items-center justify-center gap-3">
+                SHRAWAN <span class="text-red-500">❤️</span>
             </h2>
-            <p class="text-xl font-mono text-yellow-300 mb-8">6 August 1999</p>
+            <p class="text-base sm:text-lg font-mono text-yellow-300 mb-4">6 August</p>
 
-            <div class="glass-card max-w-3xl mx-auto mb-8 text-center p-8 bg-black/60 border-yellow-500/30">
-                <p class="text-gray-200 text-lg md:text-xl font-light italic leading-relaxed">
+            <div class="glass-card max-w-2xl mx-auto mb-6 text-center p-5 sm:p-7 bg-black/60 border-yellow-500/30">
+                <p class="text-gray-200 text-sm sm:text-base font-light italic leading-relaxed">
                     "Today I celebrate not just another birthday, but every challenge that made me stronger, every lesson that helped me grow, and every dream that continues to inspire me. I am grateful for my journey, proud of how far I've come, and excited for everything that lies ahead."
                 </p>
-                <h3 class="font-serif-title text-2xl md:text-3xl font-bold text-yellow-400 mt-6">
-                    Happy Birthday to Me 🎂❤️
+                <h3 class="font-serif-title text-xl sm:text-2xl font-bold text-yellow-400 mt-4 flex items-center justify-center gap-2">
+                    Happy Birthday to Me 🎂<span class="text-red-500">❤️</span>
                 </h3>
             </div>
 
-            <div class="text-gray-400 text-sm uppercase tracking-[0.4em] space-y-2 font-mono">
+            <div class="text-gray-400 text-xs sm:text-sm uppercase tracking-[0.3em] space-y-1 font-mono">
                 <p>Keep smiling. Keep believing. Keep growing.</p>
                 <p class="text-yellow-400 font-semibold">The best chapter of my life is only just beginning.</p>
             </div>
@@ -517,7 +528,7 @@
     <!-- SCREEN 8: OUTRO -->
     <div id="screen-outro" class="screen bg-black z-40">
         <div class="max-w-2xl">
-            <h2 class="font-handwriting text-5xl md:text-7xl text-yellow-300 glow-gold">
+            <h2 class="font-handwriting text-4xl sm:text-6xl text-yellow-300 glow-gold">
                 Thank You For Celebrating With Me ❤️
             </h2>
         </div>
@@ -554,8 +565,8 @@
 
                 osc1.type = 'sine';
                 osc2.type = 'triangle';
-                osc1.frequency.setValueAtTime(130.81, audioCtx.currentTime); // C3
-                osc2.frequency.setValueAtTime(196.00, audioCtx.currentTime); // G3
+                osc1.frequency.setValueAtTime(130.81, audioCtx.currentTime);
+                osc2.frequency.setValueAtTime(196.00, audioCtx.currentTime);
 
                 filter.type = 'lowpass';
                 filter.frequency.setValueAtTime(320, audioCtx.currentTime);
@@ -680,7 +691,6 @@
         function playDhoomDhadkaBombSound() {
             if (!audioCtx || isMuted) return;
             try {
-                // 1. Heavy Sub-Bass Drop ("Dhoom" Punch)
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sine';
@@ -695,7 +705,6 @@
                 osc.start();
                 osc.stop(audioCtx.currentTime + 1.2);
 
-                // 2. White Noise Blast ("Dhadka" Bomb Crash)
                 const bufferSize = audioCtx.sampleRate * 2.0;
                 const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
                 const data = buffer.getChannelData(0);
@@ -901,7 +910,7 @@
         }
 
         /* =========================================================
-           5. CAKE CUTTING & CELEBRATION
+           5. REALISTIC CAKE CUTTING WITH KNIFE & HALVES SPLITTING
            ========================================================= */
         function cutBirthdayCake() {
             playChimeSFX(880);
@@ -909,33 +918,27 @@
 
             const cutBtn = document.getElementById('cut-btn');
             const knife = document.getElementById('knife-element');
-            const cake = document.getElementById('cake-box');
 
             if (cutBtn) cutBtn.style.display = 'none';
 
-            if (knife) {
-                knife.style.opacity = '1';
-                knife.style.transform = 'translate(-80px, 80px) rotate(-10deg)';
+            if (knife && window.gsap) {
+                // Knife slicing down through center & cake splitting apart
+                gsap.timeline()
+                    .to(knife, { opacity: 1, x: -75, y: 30, rotation: -15, duration: 0.5, ease: 'power2.out' })
+                    .to(knife, { y: 150, duration: 0.8, ease: 'power1.inOut' }) // Knife cuts down center
+                    .to('#cake-left', { x: -14, rotation: -2, duration: 0.6, ease: 'back.out(1.5)' }, "-=0.4") // Left half splits
+                    .to('#cake-right', { x: 14, rotation: 2, duration: 0.6, ease: 'back.out(1.5)' }, "-=0.6") // Right half splits
+                    .to('#center-flame', { scale: 0, opacity: 0, duration: 0.3 }, "-=0.4")
+                    .to(knife, { opacity: 0, duration: 0.4 }, "+=0.2")
+                    .call(runCountdown);
+            } else {
+                runCountdown();
             }
-
-            setTimeout(() => {
-                if (window.gsap && cake) {
-                    gsap.to(cake, {
-                        scale: 1.08,
-                        duration: 0.2,
-                        repeat: 4,
-                        yoyo: true,
-                        onComplete: runCountdown
-                    });
-                } else {
-                    runCountdown();
-                }
-            }, 600);
         }
 
         function runCountdown() {
             const overlay = document.createElement('div');
-            overlay.className = 'fixed inset-0 z-50 flex items-center justify-center font-serif-title font-black text-9xl text-yellow-400 glow-gold bg-black/80 backdrop-blur-md';
+            overlay.className = 'fixed inset-0 z-50 flex items-center justify-center font-serif-title font-black text-8xl sm:text-9xl text-yellow-400 glow-gold bg-black/80 backdrop-blur-md';
             document.body.appendChild(overlay);
 
             let count = 3;
@@ -951,7 +954,6 @@
                     clearInterval(timer);
                     overlay.innerText = "BOOM! 🎉";
                     
-                    // Trigger Dhoom Dhadka Bomb Explosion & Fanfare
                     playDhoomDhadkaBombSound();
                     playCelebrationFanfare();
                     playClappingAndCheeringSound();
